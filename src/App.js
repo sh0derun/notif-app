@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Navbar from './components/Navbar';
+import NotificationsBox from './components/NoticationsBox';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+
+    const [isNotifShown, setIsNotifShown] = useState(false);
+    const [notifCount, setNotifCount] = useState(0);
+
+    const handleBellClick = isShown => {
+        if (isShown) {
+            setNotifCount(0);
+        }
+        setIsNotifShown(isShown);
+    };
+
+    const handleNotifCounter = () => {
+        setNotifCount(notifCount => notifCount + 1);
+    }
+
+    return (
+        <div className="App">
+            <Navbar handleBellClick={handleBellClick} notifCount={notifCount} />
+            <NotificationsBox notifsCounterHandler={handleNotifCounter} isShown={isNotifShown} />
+        </div>
+    );
 }
-
-export default App;

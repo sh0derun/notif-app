@@ -1,0 +1,21 @@
+.notif{
+    list-style-type: none;
+    list-style: none;
+}
+
+.fromUser{
+    font-weight: bold;
+}
+
+.odd{
+    background-color: #f8f8f8;
+}
+
+.even{
+    background-color: #fff;
+}
+
+.notif-link{
+    color: inherit;
+    text-decoration: inherit;
+}

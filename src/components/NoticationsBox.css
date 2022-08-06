@@ -1,0 +1,73 @@
+.notifs-box{
+    /* outline: none;  */
+    z-index: 2202; 
+    float: right;
+    /* position: sticky; */
+}
+
+.visible{
+    visibility: visible;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.header{
+    background-color: #5e97cc;
+    width: 550px;
+    height: 50px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.items{
+    color:#828282;
+    background-color: #fff;
+    overflow-y: scroll;
+    height: 400px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.header, .items{ 
+    display:table-caption; 
+    padding:0px; 
+    margin-left:-4px;
+} 
+
+.notif-list{
+    list-style-type: none 
+}
+
+.notif-list > li{ 
+    position:relative;
+    margin: 0;
+    padding-left: 20px;
+    padding-bottom: 1em;
+}
+
+.notif-list > li::before{ 
+    content: '';
+    background-color: rgb(150, 150, 150);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 6px;
+    width: 3px;
+}
+
+.notif-list > li::after {
+    content: '';
+    position: absolute;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' viewBox='0 0 32 32' focusable='false'%3E%3Ccircle stroke='lightslategray' stroke-width='5' fill='white' cx='16' cy='16' r='10'%3E%3C/circle%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    left: 2px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+}
